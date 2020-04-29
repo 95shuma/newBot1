@@ -24,7 +24,7 @@ public class Bot  extends TelegramLongPollingBot {
 
         else if (command.equals("/start")){
 
-            System.out.println("start");
+            System.out.println("start "+update.getMessage().getFrom().getFirstName());
             message.setText("Hello "+update.getMessage().getFrom().getFirstName()
             +"\n"+"Nice to meet you");
         }
@@ -41,7 +41,7 @@ public class Bot  extends TelegramLongPollingBot {
         }
 
         else {
-            System.out.println(update.getMessage().getText());
+            System.out.println(update.getMessage().getFrom().getFirstName()+": "+update.getMessage().getText());
             message.setText(update.getMessage().getText());
         }
 
